@@ -1,23 +1,30 @@
-#pragma once 
+#pragma once
 
 #include <string>
 
-#ifdef __CODE_GENERATOR__
-#define HIDDEN __attribute__((annotate("hidden")))
-#else
-#define HIDDEN
-#endif
+int myfunc(float x);
 
-class TextComponent  
+enum MYENUM { OPTION_1 = 0, OPTION_2 = 1, ALL = 2};
+
+class TextComponent
 {
 public:
     TextComponent();
 
-    std::string text() const;
+    TextComponent(std::string const & s);
+
+    TextComponent(std::string const & s, int i);
+
+    void some_function();
+
+    std::string getText() const;
     void setText(const std::string& value);
 
-    HIDDEN void superSecretFunction();
+    std::string getROText() const;
+
+    int myInt;
 
 private:
-    std::string m_text;
+    std::string m_text, RO_text;
+
 };
