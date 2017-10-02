@@ -6,3 +6,4 @@ nohup.out
 *.pyc
 .ycm_extra_conf.py
 **/generated
+**/.ipynb_checkpoints
